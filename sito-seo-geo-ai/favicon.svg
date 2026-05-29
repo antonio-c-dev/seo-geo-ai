@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="handleGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6D28D9"/>
+      <stop offset="100%" stop-color="#0D9488"/>
+    </linearGradient>
+    <filter id="sparkGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <radialGradient id="lensGrad" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#CCFBF1"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Lente con gradiente teal/bianco -->
+  <circle cx="41" cy="41" r="27" fill="url(#lensGrad)"/>
+
+  <!-- Bordo lente viola - SEO tradizionale -->
+  <circle cx="41" cy="41" r="27" fill="none" stroke="#6D28D9" stroke-width="9"/>
+
+  <!-- Stella a 4 punte teal con glow - GEO / AI generativa -->
+  <path d="M41,29 L46,36 L53,41 L46,46 L41,53 L36,46 L29,41 L36,36 Z"
+        fill="#0D9488"
+        filter="url(#sparkGlow)"/>
+
+  <!-- Manico con gradiente viola→teal -->
+  <line x1="62" y1="62" x2="87" y2="87"
+        stroke="url(#handleGrad)"
+        stroke-width="9"
+        stroke-linecap="round"/>
+</svg>
